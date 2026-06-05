@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>My Heart</title>
+    <style>
+      body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffe6e6;
+  margin: 0;
+}
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #ff3838;
+  transform: rotate(-45deg); 
+  animation: heartbeat 1.2s infinite; 
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff3838;
+  border-radius: 50%; 
+}
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50px;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+  20% {
+    transform: rotate(-45deg) scale(1.25); /* Primer pulso (más grande) */
+  }
+  40% {
+    transform: rotate(-45deg) scale(1.1);  /* Pequeño retroceso */
+  }
+  60% {
+    transform: rotate(-45deg) scale(1.35); /* Segundo pulso (el más fuerte) */
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);    /* Vuelve al tamaño original */
+  }
+}
+
+.message {
+  font-size: 24px;
+  color: #333;
+  animation: higger 1.2s infinite;
+}
+
+@keyframes higger {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.2); /* Primer pulso (más grande) */
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.1);  /* Pequeño retroceso */
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.3); /* Segundo pulso (el más fuerte) */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);    /* Vuelve al tamaño original */
+  }
+}
+    </style>
+    <link rel="stylesheet" type="text/css" href="heart.css">
+  </head>
+  <body>
+    <div class="heart"></div>
+    <h3 
+    class="message"
+    style="font-family: cursive; 
+    position: absolute; 
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    ">
+    Te quiero mi <span style="color: red;">Karen</span>
+  </h3>
+  </body>               
+</html>
